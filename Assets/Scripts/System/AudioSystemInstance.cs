@@ -88,15 +88,17 @@ namespace GameSystem
         }
         private static IEnumerator play(AudioClip audio, MonoBehaviour source)
         {
-            AudioSource _source =
-            source.gameObject.AddComponent<AudioSource>();
-            _source.clip = audio;
-            _source.volume = setting.soundVolumn;
-            _source.Play();
+            if (audio != null)
+            {
+                AudioSource _source =
+                source.gameObject.AddComponent<AudioSource>();
+                _source.clip = audio;
+                _source.volume = setting.soundVolumn;
+                _source.Play();
 
-            yield return new WaitForSeconds(audio.length);
-            MonoBehaviour.Destroy(_source);
-
+                yield return new WaitForSeconds(audio.length);
+                MonoBehaviour.Destroy(_source);
+            }
             yield return 0;
 
         }

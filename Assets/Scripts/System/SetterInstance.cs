@@ -31,7 +31,27 @@ namespace GameSystem
         [System.Serializable]
         public class Setting
         {
-
+            [Header("Prefab")]
+            public GameObject ammoPrefab;
+            public GameObject boomPrefab;
+            public GameObject ammoWallArea;
+            public GameObject spwanStar;
+            [Header("参数")]
+            [Range(1, 100)]
+            public int MaxAmmoNum;
+            public int sceneCount;
+            [Header("按键")]
+            public KeyCode up;
+            public KeyCode down;
+            public KeyCode left;
+            public KeyCode right;
+            public KeyCode shoot;
+            [Header("----------")]
+            public KeyCode up2;
+            public KeyCode down2;
+            public KeyCode left2;
+            public KeyCode right2;
+            public KeyCode shoot2;
         }
 
         /// <summary>

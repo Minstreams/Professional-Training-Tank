@@ -39,10 +39,113 @@ namespace GameSystem
 
 
                 //流程--------------------------------
+                private void BackToMenu()
+                {
+                    SceneSystem.PopScene();
+                    StopAllCoroutines();
+                    StartCoroutine(start());
+                }
+
                 private IEnumerator start()
                 {
-                    //这里写游戏流程控制代码
-                    throw new System.NotImplementedException();
+                    SceneSystem.PushScene("StartMenu");
+
+                    //等待上升动画
+                    yield return new WaitForSeconds(2);
+
+                    GameMessageManager.ResetGameMessage();
+                    while (true)
+                    {
+                        if (GameMessageManager.GetGameMessage(GameMessage.Start))
+                        {
+                            break;
+                        }
+                        if (GameMessageManager.GetGameMessage(GameMessage.Exit))
+                        {
+                            Application.Quit();
+                        }
+                        yield return 0;
+                    }
+
+                    for (int i = 0; i < Setter.setting.sceneCount; i++)
+                    {
+                        yield return playScene("scene" + (i / 10) + (i % 10));
+                        yield return gameWin();
+                    }
+                }
+
+                private IEnumerator exitCheck()
+                {
+                    while (true)
+                    {
+                        if (Input.GetKeyDown(KeyCode.Escape))
+                        {
+                            BackToMenu();
+                            break;
+                        }
+                        yield return 0;
+                    }
+                    yield return 0;
+                }
+
+                private IEnumerator playScene(string sceneName)
+                {
+                    SceneSystem.ChangeScene(sceneName);
+
+                    GameMessageManager.ResetGameMessage();
+                    //胜利判定
+                    while (true)
+                    {
+                        yield return 0;
+                        if (GameMessageManager.GetGameMessage(GameMessage.Win))
+                        {
+                            break;
+                        }
+                        if (GameMessageManager.GetGameMessage(GameMessage.Lose))
+                        {
+                            yield return gameOver();
+                            break;
+                        }
+                    }
+                }
+
+                private IEnumerator gameWin()
+                {
+                    SceneSystem.ChangeScene("GameWin");
+
+                    //等待上升动画
+                    yield return new WaitForSeconds(2);
+
+                    GameMessageManager.ResetGameMessage();
+                    while (true)
+                    {
+                        yield return 0;
+                        if (GameMessageManager.GetGameMessage(GameMessage.Start))
+                        {
+                            break;
+                        }
+                    }
+                    yield return 0;
+                }
+
+                private IEnumerator gameOver()
+                {
+                    SceneSystem.ChangeScene("GameOver");
+
+                    //等待上升动画
+                    yield return new WaitForSeconds(2);
+
+                    GameMessageManager.ResetGameMessage();
+                    while (true)
+                    {
+                        yield return 0;
+                        if (GameMessageManager.GetGameMessage(GameMessage.Start))
+                        {
+                            BackToMenu();
+                            break;
+                        }
+                    }
+                    yield return 0;
                 }
 
             }
@@ -86,6 +189,8 @@ namespace GameSystem
         /// </summary>
         public static class GameMessageManager
         {
+            //游戏控制信息--------------------------------------------
+
             /// <summary>
             /// 记录游戏控制信息
             /// </summary>
@@ -97,11 +202,11 @@ namespace GameSystem
             /// <param name="message">要检查的信息</param>
             /// <param name="reset">是否在接收后重置</param>
             /// <returns>检查按钮信息，收到则返回true</returns>
-            public static bool GetGameMessage(GameMessage message,bool reset = true)
+            public static bool GetGameMessage(GameMessage message, bool reset = true)
             {
                 if (gameMessageReciver[(int)message])
                 {
-                    gameMessageReciver[(int)message] = false;
+                    if (reset) gameMessageReciver[(int)message] = false;
                     return true;
                 }
                 return false;
@@ -121,6 +226,12 @@ namespace GameSystem
             {
                 gameMessageReciver.Initialize();
             }
+
+
+            //游戏控制事件--------------------------------------------
+
+
+
         }
     }
 }
@@ -129,3 +240,16 @@ namespace GameSystem
 [System.Serializable]
 public struct EmptyStruct { }
 #endif
+
+
+namespace GameSystem
+{
+    /// <summary>
+    /// 阵营类型
+    /// </summary>
+    public enum CampFlag
+    {
+        player,
+        enemy
+    }
+}
