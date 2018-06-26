@@ -15,7 +15,6 @@ public class FragileWall : AmmoDetector
 
     private void OnTriggerEnter(Collider other)
     {
-        print(1);
         if (other.tag == "Ammo")
         {
             Destroy(gameObject);

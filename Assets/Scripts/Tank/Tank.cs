@@ -46,17 +46,29 @@ public class Tank : AmmoDetector
     {
         if (ammo.campFlag != campFlag)
         {
-            ammo.Boom();
             health--;
-            if (health <= 0) Die();
+
+            if (health <= 0)
+            {
+                ammo.Boom();
+                Die();
+            }
+            else
+            {
+                ammo.BoomSlightly();
+            }
         }
     }
 
     [Header("死亡时给生成器传递的参数")]
-    public float score;
-    public event System.Action<float> onDie;
+    public int score;
+    public event System.Action<int> onDie;
+
+    private bool died = false;
     private void Die()
     {
+        if (died) return;
+        died = true;
         if (onDie != null) onDie(score);
         Destroy(gameObject);
     }

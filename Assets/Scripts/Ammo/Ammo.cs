@@ -10,8 +10,8 @@ public class Ammo : AmmoDetector
     {
         if (ammo.campFlag != campFlag)
         {
-            if (ammo != null) ammo.Boom();
-            Boom();
+            if (ammo != null) ammo.BoomSlightly();
+            BoomSlightly();
         }
     }
 
@@ -33,6 +33,12 @@ public class Ammo : AmmoDetector
     public void DieWithWall()
     {
         GameObject.Instantiate(GameSystem.Setter.setting.ammoWallArea, transform.position, transform.rotation, null);
+        Destroy(gameObject);
+    }
+
+    public void BoomSlightly()
+    {
+        GameObject.Instantiate(GameSystem.Setter.setting.boomSlight, transform.position, Quaternion.identity, null);
         Destroy(gameObject);
     }
 }

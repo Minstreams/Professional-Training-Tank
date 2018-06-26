@@ -90,7 +90,7 @@ public abstract class TankSpawner : MonoBehaviour
     /// 坦克阵亡时调用
     /// </summary>
     /// <param name="value"></param>
-    protected abstract void OnTankDie(float value);
+    protected abstract void OnTankDie(int value);
 
     /// <summary>
     /// 坦克生成时调用

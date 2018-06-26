@@ -148,12 +148,17 @@ MonoBehaviour:
       type: 2}
     boomPrefab: {fileID: 1110859880247878, guid: 94ad898358a0d504fb2dfd52a7b38261,
       type: 2}
+    boomSlight: {fileID: 1749259051442418, guid: 9e3b8abe02db1534abfc36338b2b633a,
+      type: 2}
     ammoWallArea: {fileID: 1877209236282412, guid: 88458df75e15ddd4fb11a24ad1613019,
       type: 2}
     spwanStar: {fileID: 1698848753416412, guid: 9ac9cafcd6daa4b40934795407105a80,
       type: 2}
     MaxAmmoNum: 10
     sceneCount: 1
+    currentScene: 0
+    ammoSpeed: 8
+    isP2On: 0
     up: 119
     down: 115
     left: 97

@@ -43,10 +43,10 @@ public class EnemyCore : Comp
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag != "Tank")
-        {
-            dir = RandomDir();
-        }
+        //if (collision.gameObject.tag != "Tank")
+        //{
+        dir = RandomDir();
+        //}
     }
 
     private Vector3 RandomDir()

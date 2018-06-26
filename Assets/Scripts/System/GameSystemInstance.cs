@@ -43,6 +43,7 @@ namespace GameSystem
                 {
                     SceneSystem.PopScene();
                     StopAllCoroutines();
+                    Setter.setting.currentScene = 0;
                     StartCoroutine(start());
                 }
 
@@ -67,9 +68,10 @@ namespace GameSystem
                         yield return 0;
                     }
 
-                    for (int i = 0; i < Setter.setting.sceneCount; i++)
+                    while (Setter.setting.currentScene < Setter.setting.sceneCount)
                     {
-                        yield return playScene("scene" + (i / 10) + (i % 10));
+                        yield return beforeStart();
+                        yield return playScene("scene" + (Setter.setting.currentScene / 10) + (Setter.setting.currentScene % 10));
                         yield return gameWin();
                     }
                 }
@@ -86,6 +88,12 @@ namespace GameSystem
                         yield return 0;
                     }
                     yield return 0;
+                }
+
+                private IEnumerator beforeStart()
+                {
+                    SceneSystem.ChangeScene("BeforeStart");
+                    yield return new WaitForSeconds(2);
                 }
 
                 private IEnumerator playScene(string sceneName)

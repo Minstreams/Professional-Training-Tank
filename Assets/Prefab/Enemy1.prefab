@@ -54,11 +54,9 @@ GameObject:
   - component: {fileID: 114129991889613162}
   - component: {fileID: 114364557885643320}
   - component: {fileID: 114816992113805306}
-  - component: {fileID: 65390673814167510}
-  - component: {fileID: 65404883594732424}
-  - component: {fileID: 65388605861820680}
   - component: {fileID: 54065293200587820}
   - component: {fileID: 114471732750025770}
+  - component: {fileID: 135960497720166196}
   m_Layer: 0
   m_Name: Enemy1
   m_TagString: Tank
@@ -101,7 +99,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1006220281516358}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.2, z: 0}
+  m_LocalPosition: {x: 0, y: 0.25, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4041398950090886}
@@ -122,42 +120,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 120
   m_CollisionDetection: 0
---- !u!65 &65388605861820680
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1507225579041266}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.2417332, y: 0.10853255, z: 1}
-  m_Center: {x: 0, y: -0.23567516, z: 0}
---- !u!65 &65390673814167510
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1507225579041266}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.12516227, y: 0.52, z: 1}
-  m_Center: {x: -0.19241886, y: -0.04, z: 0}
---- !u!65 &65404883594732424
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1507225579041266}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.12516224, y: 0.52, z: 1}
-  m_Center: {x: 0.19241887, y: -0.04, z: 0}
 --- !u!114 &114129991889613162
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -183,7 +145,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   campFlag: 1
-  score: 0
+  score: 100
 --- !u!114 &114364557885643320
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -195,7 +157,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b630c7cf520e1ef41b35ee84007f7c09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ammoSpeed: 8
   GunPivot: {fileID: 4973687768677796}
 --- !u!114 &114471732750025770
 MonoBehaviour:
@@ -223,6 +184,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
+--- !u!135 &135960497720166196
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1507225579041266}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.28
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!212 &212365176240814086
 SpriteRenderer:
   m_ObjectHideFlags: 1

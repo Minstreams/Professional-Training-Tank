@@ -8,7 +8,7 @@ using UnityEngine;
 [DisallowMultipleComponent]
 public class CompShooter : Comp
 {
-    public float ammoSpeed;
+    public float ammoSpeed { get { return GameSystem.Setter.setting.ammoSpeed; } }
     public Transform GunPivot;
     private int id;
     private void Start()

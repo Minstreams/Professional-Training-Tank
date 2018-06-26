@@ -10,6 +10,6 @@ public class SolidWall : AmmoDetector
 {
     protected override void Hit(Ammo ammo)
     {
-        ammo.Boom();
+        ammo.BoomSlightly();
     }
 }

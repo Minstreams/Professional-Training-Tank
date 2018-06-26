@@ -34,12 +34,16 @@ namespace GameSystem
             [Header("Prefab")]
             public GameObject ammoPrefab;
             public GameObject boomPrefab;
+            public GameObject boomSlight;
             public GameObject ammoWallArea;
             public GameObject spwanStar;
             [Header("参数")]
             [Range(1, 100)]
             public int MaxAmmoNum;
             public int sceneCount;
+            public int currentScene;
+            public float ammoSpeed;
+            public bool isP2On;
             [Header("按键")]
             public KeyCode up;
             public KeyCode down;
