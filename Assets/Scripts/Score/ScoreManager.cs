@@ -86,4 +86,14 @@ public class ScoreManager : MonoBehaviour
 
         uIPlayerHealth.ShowHealth(P1Health, P2Health);
     }
+
+    public static void AddHealth()
+    {
+        P1Health++;
+        if (GameSystem.Setter.setting.isP2On)
+        {
+            P2Health++;
+        }
+        uIPlayerHealth.ShowHealth(P1Health, P2Health);
+    }
 }

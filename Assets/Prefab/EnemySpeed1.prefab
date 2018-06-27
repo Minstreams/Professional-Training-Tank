@@ -132,6 +132,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   campFlag: 1
+  isPlayer: 0
   score: 100
 --- !u!114 &114740965743042348
 MonoBehaviour:

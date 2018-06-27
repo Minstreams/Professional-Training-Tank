@@ -14,9 +14,11 @@ public class Tank : AmmoDetector
 {
     [Header("阵营")]
     public GameSystem.CampFlag campFlag;
+    public bool isPlayer = false;
 
     //组件----------------------------------------
-    private CompDriver driver;
+    [HideInInspector]
+    public CompDriver driver;
     private CompShooter shooter;
     private ActiveStateMachine stateMachine;
 
@@ -26,6 +28,8 @@ public class Tank : AmmoDetector
         shooter = GetComponent<CompShooter>();
         stateMachine = GetComponent<ActiveStateMachine>();
         health = stateMachine.states.Length;
+        //最后一个状态用于加Buff
+        if (isPlayer) health--;
 
 #if UNITY_EDITOR
         //编辑器模式自检
@@ -44,6 +48,10 @@ public class Tank : AmmoDetector
     private int health;
     protected override void Hit(Ammo ammo)
     {
+        if (isInvisible)
+        {
+            return;
+        }
         if (ammo.campFlag != campFlag)
         {
             health--;
@@ -56,6 +64,7 @@ public class Tank : AmmoDetector
             else
             {
                 ammo.BoomSlightly();
+                stateMachine.ChangeState(health - 1);
             }
         }
     }
@@ -65,7 +74,7 @@ public class Tank : AmmoDetector
     public event System.Action<int> onDie;
 
     private bool died = false;
-    private void Die()
+    public void Die()
     {
         if (died) return;
         died = true;
@@ -73,6 +82,12 @@ public class Tank : AmmoDetector
         Destroy(gameObject);
     }
 
+
+    public void Boom()
+    {
+        GameObject.Instantiate(GameSystem.Setter.setting.boomPrefab, transform.position, Quaternion.identity, null);
+        Die();
+    }
     //接口----------------------------------------
     public void Drive(Vector3 direction)
     {
@@ -88,5 +103,25 @@ public class Tank : AmmoDetector
     public void Shoot()
     {
         shooter.Shoot();
+    }
+
+    //Buff----------------------------------------
+    /// <summary>
+    /// 无敌
+    /// </summary>
+    private bool isInvisible;
+
+    public void BuffSetInvisible(bool b)
+    {
+        if (b)
+        {
+            isInvisible = true;
+            stateMachine.ChangeState(stateMachine.states.Length - 1);
+        }
+        else
+        {
+            isInvisible = false;
+            stateMachine.ChangeState(health - 1);
+        }
     }
 }

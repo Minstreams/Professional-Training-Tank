@@ -12,6 +12,12 @@ public class CompDriver : Comp
     private Vector3 lastDir = Vector3.zero;
     private Rigidbody rig;
 
+    /// <summary>
+    /// 用于暂停
+    /// </summary>
+    [HideInInspector]
+    public bool isWorking = true;
+
     private void Start()
     {
         rig = GetComponent<Rigidbody>();
@@ -19,6 +25,7 @@ public class CompDriver : Comp
     //接口-----------------------------------
     public void Drive(Vector3 direction)
     {
+        if (!isWorking) return;
         if (direction != lastDir && direction != Vector3.zero)
         {
             lastDir = direction;
