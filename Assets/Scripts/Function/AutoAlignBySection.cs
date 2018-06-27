@@ -18,7 +18,7 @@ public class AutoAlignBySection : MonoBehaviour
 
     private void Update()
     {
-        transform.position = new Vector3(((int)(transform.position.x / (section * unit))) * (section * unit), ((int)(transform.position.y / (section * unit))) * (section * unit), 1);
+        transform.position = new Vector3(((int)((transform.position.x + section * unit / 2) / (section * unit))) * (section * unit), ((int)((transform.position.y + section * unit / 2) / (section * unit))) * (section * unit), 1);
     }
 }
 #endif
