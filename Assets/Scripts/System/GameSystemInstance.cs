@@ -226,6 +226,7 @@ namespace GameSystem
             public static void SendGameMessage(GameMessage message)
             {
                 gameMessageReciver[(int)message] = true;
+                Debug.Log(message + " sended!");
             }
             /// <summary>
             /// 重置
