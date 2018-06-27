@@ -834,9 +834,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
+  serializedVersion: 3
   m_Convex: 0
-  m_InflateMesh: 0
+  m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!33 &300632207
@@ -1432,9 +1432,15 @@ MonoBehaviour:
   - {fileID: 1312831108}
   - {fileID: 1549724572}
   mainTank: {fileID: 1507225579041266, guid: c5ac5a8017c99344a95a3df113fec1de, type: 2}
-  rareTanks: []
-  spwanMinTime: 2
-  spwanMaxTime: 5
+  rareTanks:
+  - prefab: {fileID: 1507225579041266, guid: 9c8363102c13179499d2f1c69bc14d03, type: 2}
+    rate: 0.163
+  - prefab: {fileID: 1103097194069162, guid: 336c775165594714681e8dc058e041c3, type: 2}
+    rate: 0.038
+  - prefab: {fileID: 1507225579041266, guid: e767d6399f98d67409ab73c9793a7f5d, type: 2}
+    rate: 0.197
+  spwanMinTime: 1
+  spwanMaxTime: 4
 --- !u!4 &643216346
 Transform:
   m_ObjectHideFlags: 0
@@ -1449,7 +1455,7 @@ Transform:
   - {fileID: 1312831108}
   - {fileID: 1549724572}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &653568042
 Prefab:
@@ -1810,9 +1816,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
+  serializedVersion: 3
   m_Convex: 0
-  m_InflateMesh: 0
+  m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!33 &796625355
@@ -1850,7 +1856,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spwanPoints:
-  - {fileID: 0}
+  - {fileID: 1527227959}
   mainTank: {fileID: 1196283797977788, guid: a6f5584560708e240807c078ed4c64f6, type: 2}
   rareTanks: []
   scoreOnDie: 500
@@ -1867,7 +1873,7 @@ Transform:
   m_Children:
   - {fileID: 1527227959}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &826315821 stripped
 Transform:
@@ -2639,7 +2645,7 @@ Transform:
   m_Children:
   - {fileID: 692824076}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1080688969
 MonoBehaviour:
@@ -2899,7 +2905,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4599608479747434, guid: df660531aaf20f546b4aea7e9f64e289, type: 2}
       propertyPath: m_RootOrder
-      value: 9
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1596186195781732, guid: df660531aaf20f546b4aea7e9f64e289, type: 2}
       propertyPath: m_Name
@@ -3323,9 +3329,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
+  serializedVersion: 3
   m_Convex: 0
-  m_InflateMesh: 0
+  m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!33 &1397813022
@@ -3372,7 +3378,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4312331223706978, guid: 02ec52de5ca399341b2f41f00dc7b62a, type: 2}
       propertyPath: m_RootOrder
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 02ec52de5ca399341b2f41f00dc7b62a, type: 2}
@@ -3440,6 +3446,7 @@ Camera:
   m_TargetEye: 3
   m_HDR: 1
   m_AllowMSAA: 1
+  m_AllowDynamicResolution: 0
   m_ForceIntoRT: 0
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
@@ -4095,7 +4102,7 @@ Transform:
   - {fileID: 2004883158}
   - {fileID: 1397813017}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1865442354
 Prefab:
@@ -4175,9 +4182,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51bdb14bdedb2a040a58115a2e734589, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxEnemyNum: 8
-  P1MaxHealth: 1
-  P2MaxHealth: 1
+  maxEnemyNum: 15
+  P1MaxHealth: 4
+  P2MaxHealth: 4
 --- !u!4 &1870542290
 Transform:
   m_ObjectHideFlags: 0
@@ -4191,7 +4198,7 @@ Transform:
   - {fileID: 826315821}
   - {fileID: 1001401811}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1882098942
 Prefab:
@@ -4202,11 +4209,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4786838395955734, guid: 5af37d5146dbe4e4baf06f4ca5d35ae3, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -2.56
+      value: -3.36
       objectReference: {fileID: 0}
     - target: {fileID: 4786838395955734, guid: 5af37d5146dbe4e4baf06f4ca5d35ae3, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 1.12
+      value: -3.36
       objectReference: {fileID: 0}
     - target: {fileID: 4786838395955734, guid: 5af37d5146dbe4e4baf06f4ca5d35ae3, type: 2}
       propertyPath: m_LocalPosition.z
@@ -4487,9 +4494,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
+  serializedVersion: 3
   m_Convex: 0
-  m_InflateMesh: 0
+  m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!33 &2004883163
@@ -4587,5 +4594,5 @@ Transform:
   - {fileID: 1224314345}
   - {fileID: 78533736}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
