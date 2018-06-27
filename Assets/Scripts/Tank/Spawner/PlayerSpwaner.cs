@@ -22,6 +22,7 @@ public class PlayerSpwaner : TankSpawner
     protected override void OnTankDie(int value)
     {
         ScoreManager.SubScore(scoreOnDie, isP1);
+        ScoreManager.SubHealth(isP1);
         print(12);
         GenerateTank();
     }

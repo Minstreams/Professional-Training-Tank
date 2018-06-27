@@ -38,6 +38,17 @@ public class ScoreManager : MonoBehaviour
         enemyNum = 0;
         uiEnemyNum = GetComponentInChildren<UIEnemyNum>();
         uiEnemyNum.ShowEnemyNum(enemyLastNum);
+
+        P1Health = P1MaxHealth;
+        if (GameSystem.Setter.setting.isP2On)
+        {
+            P2Health = P2MaxHealth;
+        }
+        else
+        {
+            P2Health = 0;
+        }
+        uIPlayerHealth = GetComponentInChildren<UIPlayerHealth>();
     }
 
     //UI显示相关
@@ -47,5 +58,32 @@ public class ScoreManager : MonoBehaviour
     {
         enemyLastNum--;
         uiEnemyNum.ShowEnemyNum(enemyLastNum);
+    }
+
+    //玩家生命相关
+    public static int P1Health;
+    public static int P2Health;
+
+    public int P1MaxHealth;
+    public int P2MaxHealth;
+
+    private static UIPlayerHealth uIPlayerHealth;
+    public static void SubHealth(bool isP1)
+    {
+        if (isP1)
+        {
+            P1Health--;
+        }
+        else
+        {
+            P2Health--;
+        }
+
+        if (P1Health + P2Health <= 0)
+        {
+            GameSystem.InnerSystem.GameMessageManager.SendGameMessage(GameSystem.InnerSystem.GameMessage.Lose);
+        }
+
+        uIPlayerHealth.ShowHealth(P1Health, P2Health);
     }
 }
