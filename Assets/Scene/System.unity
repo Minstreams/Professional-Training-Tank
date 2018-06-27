@@ -156,7 +156,7 @@ MonoBehaviour:
       type: 2}
     MaxAmmoNum: 10
     sceneCount: 7
-    currentScene: 5
+    currentScene: 0
     ammoSpeed: 7
     isP2On: 0
     up: 119

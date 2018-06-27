@@ -11,6 +11,7 @@ public class SelfMover : MonoBehaviour {
     private void Start()
     {
         timer = time;
+        transform.Translate(-offset);
     }
     private void Update()
     {

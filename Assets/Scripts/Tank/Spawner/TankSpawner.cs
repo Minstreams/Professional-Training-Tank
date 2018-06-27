@@ -32,6 +32,13 @@ public abstract class TankSpawner : MonoBehaviour
         {
             Debug.LogError("必须要有SpwanPoint！");
         }
+        foreach(Transform t in spwanPoints)
+        {
+            if(t == null)
+            {
+                Debug.LogError("出生点没有设置！");
+            }
+        }
         if (rareTanks != null)
         {
             float sum = 0;
@@ -39,7 +46,7 @@ public abstract class TankSpawner : MonoBehaviour
             {
                 if (rt.prefab == null)
                 {
-                    Debug.LogError("出生点没有设置！");
+                    Debug.LogError("稀有坦克种类没有设置！");
                 }
                 sum += rt.rate;
             }

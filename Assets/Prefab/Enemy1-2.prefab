@@ -221,7 +221,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minTurnTime: 2
   maxTurnTime: 5
-  shootTime: 3
+  shootTime: 1
 --- !u!114 &114816992113805306
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -234,7 +234,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1.5
-  isWorking: 1
 --- !u!114 &114918095047026668
 MonoBehaviour:
   m_ObjectHideFlags: 1
