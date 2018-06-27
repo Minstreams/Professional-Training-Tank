@@ -8857,8 +8857,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxEnemyNum: 16
-  P1MaxHealth: 1
-  P2MaxHealth: 1
+  P1MaxHealth: 3
+  P2MaxHealth: 3
 --- !u!4 &1870542290
 Transform:
   m_ObjectHideFlags: 0

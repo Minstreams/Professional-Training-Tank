@@ -19,7 +19,7 @@ public class EnemyCore : Comp
     private void Start()
     {
         turnTimer = Random.Range(minTurnTime, maxTurnTime);
-        shootTimer = shootTime;
+        shootTimer = 0.1f;
         dir = RandomDir();
     }
 
@@ -40,7 +40,7 @@ public class EnemyCore : Comp
             tank.Shoot();
         }
     }
-	 
+
     private void OnCollisionEnter(Collision collision)
     {
         //if (collision.gameObject.tag != "Tank")
@@ -51,53 +51,53 @@ public class EnemyCore : Comp
 
     private Vector3 RandomDir()
     {
-		float x = transform.position.x - Eagle.position.x;
-		float y = transform.position.y - Eagle.position.y;
-		int i = Random.Range(0, 100);
-		if (i < 15)
-		{
-			if (x > 0)
-			{
-				return Vector3.right;
-			}
-			else
-			{
-				return Vector3.left;
-			}
-		}
-		if (i >= 15 && i < 30)
-		{
-			if (y > 0)
-			{
-				return Vector3.up;
-			}
-			else
-			{
-				return Vector3.down;
-			}
-		}
-		if (i >= 30 && i < 65)
-		{
-			if (x > 0)
-			{
-				return Vector3.left;
-			}
-			else
-			{
-				return Vector3.right;
-			}
-		}
-		if (i >= 65 && i < 100)
-		{
-			if (y > 0)
-			{
-				return Vector3.down;
-			}
-			else
-			{
-				return Vector3.up;
-			}
-		}
-		return Vector3.up;
+        float x = transform.position.x - Eagle.position.x;
+        float y = transform.position.y - Eagle.position.y;
+        int i = Random.Range(0, 100);
+        if (i < 15)
+        {
+            if (x > 0)
+            {
+                return Vector3.right;
+            }
+            else
+            {
+                return Vector3.left;
+            }
+        }
+        if (i >= 15 && i < 30)
+        {
+            if (y > 0)
+            {
+                return Vector3.up;
+            }
+            else
+            {
+                return Vector3.down;
+            }
+        }
+        if (i >= 30 && i < 65)
+        {
+            if (x > 0)
+            {
+                return Vector3.left;
+            }
+            else
+            {
+                return Vector3.right;
+            }
+        }
+        if (i >= 65 && i < 100)
+        {
+            if (y > 0)
+            {
+                return Vector3.down;
+            }
+            else
+            {
+                return Vector3.up;
+            }
+        }
+        return Vector3.up;
     }
 }

@@ -4,4 +4,43 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scene/System.unity
+    guid: c3f102afff21857488cf2a10c6efd685
+  - enabled: 1
+    path: Assets/Scene/BeforeStart.unity
+    guid: cd11862fa4bf58248b47f51eccc6e2fb
+  - enabled: 1
+    path: Assets/Scene/GameOver.unity
+    guid: c4e8fa50aa412ec438f204c6541086b9
+  - enabled: 1
+    path: Assets/Scene/GameTip.unity
+    guid: 739060bd7c2118a4f834a464d5af5655
+  - enabled: 1
+    path: Assets/Scene/GameWin.unity
+    guid: 3cd66d4c22617684ab7ca45a70823f1a
+  - enabled: 1
+    path: Assets/Scene/Scene00.unity
+    guid: c98e6b8e403f6324c8320f92e0092b68
+  - enabled: 1
+    path: Assets/Scene/Scene01.unity
+    guid: d957088b10b8ac141ba57d2c3070fd06
+  - enabled: 1
+    path: Assets/Scene/Scene02.unity
+    guid: b9ba4723b64a7b845a5084a22a425a6d
+  - enabled: 1
+    path: Assets/Scene/Scene03.unity
+    guid: a0a3d716f3ccc00478ef9225c9d7ec12
+  - enabled: 1
+    path: Assets/Scene/Scene04.unity
+    guid: 6ce5da47879732b45916dc7423011691
+  - enabled: 1
+    path: Assets/Scene/Scene05.unity
+    guid: 18a3174c509e73e42b9ef9be1e2626a9
+  - enabled: 1
+    path: Assets/Scene/Scene06.unity
+    guid: c727a7780a4eb6e4781efa9f83c7ca25
+  - enabled: 1
+    path: Assets/Scene/StartMenu.unity
+    guid: e4d9c02926dce4c4a8c9a8cd8fd023ee

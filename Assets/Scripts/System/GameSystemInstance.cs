@@ -34,6 +34,7 @@ namespace GameSystem
                 //游戏启动----------------------------
                 private void Start()
                 {
+                    Cursor.visible = false;
                     StartCoroutine(start());
                 }
 
@@ -253,7 +254,10 @@ namespace GameSystem
             /// </summary>
             public static void ResetGameMessage()
             {
-                gameMessageReciver.Initialize();
+                for (int i = 0; i < gameMessageReciver.Length; i++)
+                {
+                    gameMessageReciver[i] = false;
+                }
             }
 
 
