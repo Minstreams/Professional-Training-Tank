@@ -37,6 +37,10 @@ public abstract class TankSpawner : MonoBehaviour
             float sum = 0;
             foreach (rareTank rt in rareTanks)
             {
+                if(rt.prefab == null)
+                {
+                    Debug.LogError("出生点没有设置！");
+                }
                 sum += rt.rate;
             }
             if (sum >= 1)
