@@ -48,6 +48,7 @@ public class AmmoManager : MonoBehaviour
     {
         idActive[id] = true;
 
+        GameSystem.AudioSystem.Play(GameSystem.Setter.setting.audioFire);
         GameObject ammo = GameObject.Instantiate(ammoPrefab, pos, Quaternion.LookRotation(Vector3.forward, direction), instance.transform);
         ammo.GetComponent<Ammo>().campFlag = camp;
 

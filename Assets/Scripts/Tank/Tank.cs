@@ -85,6 +85,7 @@ public class Tank : AmmoDetector
 
     public void Boom()
     {
+        GameSystem.AudioSystem.Play(GameSystem.Setter.setting.audioBlast);
         GameObject.Instantiate(GameSystem.Setter.setting.boomPrefab, transform.position, Quaternion.identity, null);
         Die();
     }

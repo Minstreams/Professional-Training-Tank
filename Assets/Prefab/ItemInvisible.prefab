@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 212395491258334008}
   - component: {fileID: 65993962626223850}
   - component: {fileID: 114387136276609800}
+  - component: {fileID: 114829314156537528}
   m_Layer: 0
   m_Name: ItemInvisible
   m_TagString: Untagged
@@ -66,6 +67,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buffTime: 15
+--- !u!114 &114829314156537528
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1737528444450598}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04fad18fc4edda9438dc67b7784e6180, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interval: 0.5
 --- !u!212 &212395491258334008
 SpriteRenderer:
   m_ObjectHideFlags: 1

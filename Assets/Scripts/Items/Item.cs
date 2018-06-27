@@ -18,6 +18,7 @@ public abstract class Item : MonoBehaviour
 
     protected IEnumerator Buff(Tank tank)
     {
+        GameSystem.AudioSystem.Play(GameSystem.Setter.setting.audioAdd);
         BuffOn(tank);
         yield return new WaitForSeconds(buffTime);
         BuffOff(tank);

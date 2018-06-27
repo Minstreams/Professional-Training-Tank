@@ -32,8 +32,6 @@ public class ScoreManager : MonoBehaviour
     }
     private void Start()
     {
-        p1Score = 0;
-        p2Score = 0;
         enemyLastNum = maxEnemyNum;
         enemyNum = 0;
         uiEnemyNum = GetComponentInChildren<UIEnemyNum>();
@@ -49,6 +47,13 @@ public class ScoreManager : MonoBehaviour
             P2Health = 0;
         }
         uIPlayerHealth = GetComponentInChildren<UIPlayerHealth>();
+        uIPlayerHealth.ShowHealth(P1Health, P2Health);
+    }
+
+    public static void Init()
+    {
+        p1Score = 0;
+        p2Score = 0;
     }
 
     //UI显示相关

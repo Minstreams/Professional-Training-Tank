@@ -10,7 +10,7 @@ public class ItemStop : Item
 
         foreach (Tank tk in t)
         {
-            tk.driver.isWorking = true;
+            tk.driver.Conti();
         }
     }
 
@@ -20,7 +20,7 @@ public class ItemStop : Item
 
         foreach (Tank tk in t)
         {
-            tk.driver.isWorking = false;
+            tk.driver.Stop();
         }
     }
 }

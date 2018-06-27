@@ -56,6 +56,12 @@ namespace GameSystem
             public KeyCode left2;
             public KeyCode right2;
             public KeyCode shoot2;
+            [Header("音效")]
+            public AudioClip audioStart;
+            public AudioClip audioFire;
+            public AudioClip audioHit;
+            public AudioClip audioBlast;
+            public AudioClip audioAdd;
         }
 
         /// <summary>

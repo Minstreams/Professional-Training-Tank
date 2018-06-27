@@ -37,7 +37,7 @@ public abstract class TankSpawner : MonoBehaviour
             float sum = 0;
             foreach (rareTank rt in rareTanks)
             {
-                if(rt.prefab == null)
+                if (rt.prefab == null)
                 {
                     Debug.LogError("出生点没有设置！");
                 }
@@ -81,7 +81,8 @@ public abstract class TankSpawner : MonoBehaviour
     private IEnumerator generateTank()
     {
         Transform spawnPoint = spwanPoints[Random.Range(0, spwanPoints.Length)];
-        GameObject g = GameObject.Instantiate(GameSystem.Setter.setting.spwanStar, spawnPoint.position, Quaternion.identity, transform);
+        GameObject g = null;
+        if (spawnPoint != null) g = GameObject.Instantiate(GameSystem.Setter.setting.spwanStar, spawnPoint.position, Quaternion.identity, transform);
         yield return new WaitForSeconds(2);
         Destroy(g);
 

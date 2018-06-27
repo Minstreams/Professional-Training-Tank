@@ -16,7 +16,18 @@ public class CompDriver : Comp
     /// 用于暂停
     /// </summary>
     [HideInInspector]
-    public bool isWorking = true;
+    private bool isWorking = true;
+
+    public void Stop()
+    {
+        isWorking = false;
+        rig.velocity = Vector3.zero;
+    }
+
+    public void Conti()
+    {
+        isWorking = true;
+    }
 
     private void Start()
     {

@@ -21,6 +21,7 @@ public class Ammo : AmmoDetector
     [ContextMenu("Boom!")]
     public void Boom()
     {
+        GameSystem.AudioSystem.Play(GameSystem.Setter.setting.audioBlast);
         GameObject.Instantiate(GameSystem.Setter.setting.boomPrefab, transform.position, Quaternion.identity, null);
         Destroy(gameObject);
     }
@@ -38,6 +39,7 @@ public class Ammo : AmmoDetector
 
     public void BoomSlightly()
     {
+        GameSystem.AudioSystem.Play(GameSystem.Setter.setting.audioHit);
         GameObject.Instantiate(GameSystem.Setter.setting.boomSlight, transform.position, Quaternion.identity, null);
         Destroy(gameObject);
     }

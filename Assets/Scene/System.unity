@@ -155,8 +155,8 @@ MonoBehaviour:
     spwanStar: {fileID: 1698848753416412, guid: 9ac9cafcd6daa4b40934795407105a80,
       type: 2}
     MaxAmmoNum: 10
-    sceneCount: 1
-    currentScene: 0
+    sceneCount: 7
+    currentScene: 5
     ammoSpeed: 7
     isP2On: 0
     up: 119
@@ -169,6 +169,11 @@ MonoBehaviour:
     left2: 276
     right2: 275
     shoot2: 256
+    audioStart: {fileID: 8300000, guid: b51d44437e0f12c4c9ca890ac72ef844, type: 3}
+    audioFire: {fileID: 8300000, guid: 355c3b0b94468c749b00d76e96906313, type: 3}
+    audioHit: {fileID: 8300000, guid: 291ecb60819f4234b8b81ff7ac1b8754, type: 3}
+    audioBlast: {fileID: 8300000, guid: ec3a5d5d6c469084293f4fa35f33dd64, type: 3}
+    audioAdd: {fileID: 8300000, guid: 97103f87cbd76144eaa5eee90a8dd3c9, type: 3}
 --- !u!114 &8010504
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -201,7 +206,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 8010502}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: aa56ba15696de5d45b430bee1fa5c645, type: 3}
   m_Name: 

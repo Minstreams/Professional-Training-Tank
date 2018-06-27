@@ -68,11 +68,14 @@ namespace GameSystem
                         yield return 0;
                     }
 
+                    ScoreManager.Init();
+
                     while (Setter.setting.currentScene < Setter.setting.sceneCount)
                     {
                         yield return beforeStart();
                         yield return playScene("scene" + (Setter.setting.currentScene / 10) + (Setter.setting.currentScene % 10));
                         yield return gameWin();
+                        Setter.setting.currentScene++;
                     }
                 }
 
@@ -92,6 +95,7 @@ namespace GameSystem
 
                 private IEnumerator beforeStart()
                 {
+                    AudioSystem.Play(Setter.setting.audioStart);
                     SceneSystem.ChangeScene("BeforeStart");
                     yield return new WaitForSeconds(2);
                 }
