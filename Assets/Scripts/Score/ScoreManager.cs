@@ -73,7 +73,7 @@ public class ScoreManager : MonoBehaviour
     public int P2MaxHealth;
 
     private static UIPlayerHealth uIPlayerHealth;
-    public static void SubHealth(bool isP1)
+    public static int SubHealth(bool isP1)
     {
         if (isP1)
         {
@@ -90,6 +90,8 @@ public class ScoreManager : MonoBehaviour
         }
 
         uIPlayerHealth.ShowHealth(P1Health, P2Health);
+
+        return isP1 ? P1Health : P2Health;
     }
 
     public static void AddHealth()
