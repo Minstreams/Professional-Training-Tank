@@ -69,6 +69,7 @@ GameObject:
   - component: {fileID: 4851001132226568}
   - component: {fileID: 65692649327526668}
   - component: {fileID: 114686862829296416}
+  - component: {fileID: 114763739924671832}
   m_Layer: 0
   m_Name: SolidWall
   m_TagString: Untagged
@@ -184,6 +185,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68a1d3528062abd42b0df8fcd565cf5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114763739924671832
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1389465905921902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4522fd02b6d948642a4bf87a7510faa8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  section: 4
 --- !u!212 &212119073815998538
 SpriteRenderer:
   m_ObjectHideFlags: 1
