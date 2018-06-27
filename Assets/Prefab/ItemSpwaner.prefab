@@ -53,7 +53,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   xRange: {x: -3.84, y: 3.84}
   yRange: {x: -3, y: 3.84}
-  timeInteval: {x: 15, y: 30}
+  timeInteval: {x: 13, y: 20}
   timeLast: 10
   items:
   - {fileID: 1737528444450598, guid: ceeba461d09373345b377cbb18810e60, type: 2}

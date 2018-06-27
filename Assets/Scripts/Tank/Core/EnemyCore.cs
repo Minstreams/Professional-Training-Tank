@@ -54,7 +54,7 @@ public class EnemyCore : Comp
 		float x = transform.position.x - Eagle.position.x;
 		float y = transform.position.y - Eagle.position.y;
 		int i = Random.Range(0, 100);
-		if (i < 10)
+		if (i < 15)
 		{
 			if (x > 0)
 			{
@@ -65,7 +65,7 @@ public class EnemyCore : Comp
 				return Vector3.left;
 			}
 		}
-		if (i >= 10 && i < 20)
+		if (i >= 15 && i < 30)
 		{
 			if (y > 0)
 			{
@@ -76,7 +76,7 @@ public class EnemyCore : Comp
 				return Vector3.down;
 			}
 		}
-		if (i >= 20 && i < 60)
+		if (i >= 30 && i < 65)
 		{
 			if (x > 0)
 			{
@@ -87,7 +87,7 @@ public class EnemyCore : Comp
 				return Vector3.right;
 			}
 		}
-		if (i >= 60 && i < 100)
+		if (i >= 65 && i < 100)
 		{
 			if (y > 0)
 			{

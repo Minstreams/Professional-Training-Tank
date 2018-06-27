@@ -19,7 +19,7 @@ public class Tank : AmmoDetector
     //组件----------------------------------------
     [HideInInspector]
     public CompDriver driver;
-    private CompShooter shooter;
+    public CompShooter shooter;
     private ActiveStateMachine stateMachine;
 
     private void Start()

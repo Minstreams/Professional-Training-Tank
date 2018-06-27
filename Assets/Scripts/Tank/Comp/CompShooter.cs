@@ -19,6 +19,24 @@ public class CompShooter : Comp
     //接口-----------------------------------
     public void Shoot()
     {
+        if (!isWorking) return;
         AmmoManager.GenerateAmmo(GunPivot.position, transform.up, ammoSpeed, id, tank.campFlag);
     }
+
+    /// <summary>
+    /// 用于暂停
+    /// </summary>
+    [HideInInspector]
+    private bool isWorking = true;
+
+    public void Stop()
+    {
+        isWorking = false;
+    }
+
+    public void Conti()
+    {
+        isWorking = true;
+    }
+
 }

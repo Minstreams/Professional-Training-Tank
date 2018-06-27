@@ -11,6 +11,7 @@ public class ItemStop : Item
         foreach (Tank tk in t)
         {
             tk.driver.Conti();
+            tk.shooter.Conti();
         }
     }
 
@@ -21,6 +22,7 @@ public class ItemStop : Item
         foreach (Tank tk in t)
         {
             tk.driver.Stop();
+            tk.shooter.Stop();
         }
     }
 }
