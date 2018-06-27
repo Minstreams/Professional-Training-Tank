@@ -11,14 +11,24 @@ using UnityEngine;
 [AddComponentMenu("Function/Auto Align")]
 public class AutoAlignBySection : MonoBehaviour
 {
-    [Header("【自动对齐组件】"), Header("对齐单元数"), Range(1, 8)]
-    public int section = 4;
+	[Header("【自动对齐组件】"), Header("对齐单元数"), Range(1, 8)]
+	public int section = 1;
 
-    private const float unit = 0.16f;
+	private const float unit = 0.16f;
 
-    private void Update()
-    {
-        transform.position = new Vector3(((int)((transform.position.x + section * unit / 2) / (section * unit))) * (section * unit), ((int)((transform.position.y + section * unit / 2) / (section * unit))) * (section * unit), 1);
-    }
+	private void Update()
+	{
+		transform.position = new Vector3(
+			((int)((
+			transform.position.x > section * unit / 2 ?
+			transform.position.x + section * unit / 2 :
+			transform.position.x - section * unit / 2
+			) / (section * unit))) * (section * unit),
+			((int)((
+			transform.position.y > section * unit / 2 ?
+			transform.position.y + section * unit / 2 :
+			transform.position.y - section * unit / 2
+			) / (section * unit))) * (section * unit), 0);
+	}
 }
 #endif
