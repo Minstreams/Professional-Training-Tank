@@ -68,6 +68,22 @@ namespace GameSystem
                         yield return 0;
                     }
 
+                    SceneSystem.ChangeScene("GameTip");
+                    StartCoroutine(exitCheck());
+
+                    //等待上升动画
+                    yield return new WaitForSeconds(2);
+
+                    GameMessageManager.ResetGameMessage();
+                    while (true)
+                    {
+                        if (GameMessageManager.GetGameMessage(GameMessage.Start))
+                        {
+                            break;
+                        }
+                        yield return 0;
+                    }
+
                     ScoreManager.Init();
 
                     while (Setter.setting.currentScene < Setter.setting.sceneCount)
